@@ -11,13 +11,13 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   let sum = a + b;
   let message = `The sum of ${a} and ${b} is ${sum}.`;
-  console.log(sum, message);
+  // console.log(sum, message);
 
   return [sum, message];
 }
 
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+testSum(4, 7);//eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -33,13 +33,13 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   let multiply = a*b;
   let message = `The product of ${a} and ${b} is ${multiply}.`;
-  console.log(multiply, message);
+  // console.log(multiply, message);
 
   return [multiply, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5,9);//eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +56,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let sumAb = sum(a, b)[0];
+  let sumC = sum(sumAb, c)[0];
+  let multiplyAb = multiply(a, b)[0];
+  let multiplyC = multiply(multiplyAb, c)[0];
+  let messageOne = `${a} and ${b} and ${c} sum to ${sumC}.`;
+  let messageTwo = `The product of ${a} and ${b} and ${c} is ${multiplyC}.`;
+  // console.log([sumC, multiplyC, messageOne, messageTwo]);
 
+  return [sumC, multiplyC, messageOne, messageTwo];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);//eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
